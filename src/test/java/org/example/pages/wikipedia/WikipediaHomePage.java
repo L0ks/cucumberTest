@@ -1,12 +1,12 @@
 package org.example.pages.wikipedia;
 
-import org.example.pages.BasePage;
+import org.example.common.AbstractPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
 
-public class WikipediaHomePage extends BasePage {
+public class WikipediaHomePage extends AbstractPage {
 
     private final String url = "https://www.wikipedia.org";
 

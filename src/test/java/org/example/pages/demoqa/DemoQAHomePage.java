@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class DemoQAHomePage extends DemoQABasePage {
+public class DemoQAHomePage extends DemoQAAbstractPage {
     private By categoryCards = By.cssSelector(".category-cards > .card.mt-4.top-card");
     private By categoryCardName = By.cssSelector(".card-body > h5");
 

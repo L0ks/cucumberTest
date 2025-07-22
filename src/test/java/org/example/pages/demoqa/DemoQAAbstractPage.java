@@ -1,12 +1,12 @@
 package org.example.pages.demoqa;
 
-import org.example.pages.BasePage;
+import org.example.common.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
-public class DemoQABasePage extends BasePage {
+public class DemoQAAbstractPage extends AbstractPage {
     protected String url = "https://demoqa.com/";
 
-    public DemoQABasePage(WebDriver driver) {
+    public DemoQAAbstractPage(WebDriver driver) {
         super(driver);
     }
 }

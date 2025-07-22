@@ -1,4 +1,4 @@
-package org.example.pages;
+package org.example.common;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -7,18 +7,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public abstract class BasePage {
+public abstract class AbstractPage {
     protected WebDriver driver;
     protected WebDriverWait wait;
     private static final Duration DEFAULT_TIMEOUT = Duration.ofSeconds(10);
 
 
-    public BasePage(WebDriver driver) {
+    public AbstractPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
     }
 
-    public BasePage(WebDriver driver, Duration timeout) {
+    public AbstractPage(WebDriver driver, Duration timeout) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, timeout);
     }
