@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public abstract class BasePage {
     protected WebDriver driver;
@@ -27,8 +28,19 @@ public abstract class BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
+    protected List<WebElement> waitUntilAllVisible(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+    }
+
     protected WebElement waitUntilClickable(By locator) {
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
+    protected List<WebElement> waitUntilAllClickable(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator))
+                .stream()
+                .filter(WebElement::isEnabled)
+                .toList(); // Requires Java 17+, or use collect(Collectors.toList()) in older Java versions
     }
 
     protected void waitForUrlToContain(String partialUrl) {

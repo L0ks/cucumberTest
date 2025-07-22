@@ -14,6 +14,12 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <selenium.java.version>4.21.0</selenium.java.version>
+    <cucumber.version>7.16.1</cucumber.version>
+    <junit.jupiter.version>5.10.2</junit.jupiter.version>
+    <webdrivermanager.version>6.1.0</webdrivermanager.version>
+    <maven.surefire.version>3.2.5</maven.surefire.version>
   </properties>
 
   <dependencies>
@@ -21,33 +27,48 @@
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>4.21.0</version>
+      <version>${selenium.java.version}</version>
     </dependency>
 
     <!-- Cucumber -->
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
-      <version>7.16.1</version>
+      <version>${cucumber.version}</version>
     </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit-platform-engine</artifactId>
-      <version>7.16.1</version>
+      <version>${cucumber.version}</version>
     </dependency>
 
     <!-- JUnit Jupiter (JUnit 5) -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
-      <version>5.10.2</version>
+      <version>${junit.jupiter.version}</version>
     </dependency>
 
     <!-- WebDriverManager -->
     <dependency>
       <groupId>io.github.bonigarcia</groupId>
       <artifactId>webdrivermanager</artifactId>
-      <version>6.1.0</version>
+      <version>${webdrivermanager.version}</version>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven.surefire.version}</version>
+        <configuration>
+          <includes>
+            <include>**/*TestRunner.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

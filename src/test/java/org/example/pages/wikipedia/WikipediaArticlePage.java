@@ -1,10 +1,11 @@
-package org.example.pages;
+package org.example.pages.wikipedia;
 
+import org.example.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class WikipediaArticlePage extends BasePage{
+public class WikipediaArticlePage extends BasePage {
     private By articleHeading = By.className("mw-page-title-main");
 
     public WikipediaArticlePage(WebDriver driver) {
