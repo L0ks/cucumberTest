@@ -4,7 +4,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
-import static org.example.helpers.SystemPropertyHelper.getBooleanProperty;
+import static org.example.utils.SystemPropertyHelper.getBooleanProperty;
 
 public class Hooks {
     @Before(order = 0)

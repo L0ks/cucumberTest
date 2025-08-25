@@ -7,9 +7,6 @@ import org.openqa.selenium.WebDriver;
 import java.time.Duration;
 
 public class WikipediaHomePage extends AbstractPage {
-
-    private final String url = "https://www.wikipedia.org";
-
     private By searchBar = By.id("searchInput");
     private By searchButton = By.cssSelector("button[type='submit']");
 
@@ -17,9 +14,6 @@ public class WikipediaHomePage extends AbstractPage {
         super(driver, Duration.ofSeconds(5));
     }
 
-    public void goToHomePage(){
-        driver.get(url);
-    }
     public void typeIntoSearchBar(String input){
         type(searchBar, input);
     }

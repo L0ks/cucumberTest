@@ -28,6 +28,10 @@ public abstract class AbstractPage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
+    protected WebElement waitUntilVisible(WebElement parent, By locator) {
+        return wait.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(parent, locator)).get(0);
+    }
+
     protected List<WebElement> waitUntilAllVisible(By locator) {
         return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }
@@ -56,6 +60,10 @@ public abstract class AbstractPage {
     }
 
     // Common Actions
+    public void goToPage(String url) {
+        driver.get(url);
+    }
+
     protected void type(By locator, String text) {
         WebElement element = waitUntilVisible(locator);
         element.clear();
